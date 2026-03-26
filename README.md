@@ -1,4 +1,4 @@
-# 👋 Hi, I'm D`scriptaur
+# <p align="center"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=40&pause=1000&color=007BFF&center=true&vCenter=true&width=600&lines=D'Scriptaur" alt="Typing SVG" /></p>
 
 ### 🎓 Undergrad Data Scientist | 💻 Aspiring Developer | 🃏 Strategy Enthusiast
 
