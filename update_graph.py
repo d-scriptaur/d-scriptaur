@@ -35,7 +35,6 @@ for col in df_cumulative.columns:
 plt.title('HackerRank: Cumulative Skill Growth', fontsize=16, fontweight='bold', color='#58a6ff')
 plt.xlabel('Day Number', fontsize=12)
 plt.ylabel('Total Accumulated Marks', fontsize=12)
-plt.xticks(df_cumulative['Day']) # Shows 1, 2, 3... on X-axis
 plt.grid(axis='both', linestyle='--', alpha=0.2)
 
 # Legend placement
