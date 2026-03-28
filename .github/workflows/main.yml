@@ -1,6 +1,8 @@
 name: Update Progress Graph
 on: [push] # Runs every time you push code
-
+permissions:
+      contents: write
+  
 jobs:
   build:
     runs-on: ubuntu-latest
