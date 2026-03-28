@@ -11,30 +11,36 @@ data = {
 }
 
 # --- 2. PROCESSING ---
-# Handle unequal lengths by converting to Series
-df = pd.DataFrame({k: pd.Series(v) for k, v in data.items()})
-df['Day'] = range(1, len(df) + 1)
+# 1. Handle unequal lengths
+df = pd.DataFrame({k: pd.Series(v) for k, v in data.items()}).fillna(0)
+
+# 2. CUMULATIVE SUM: This turns daily marks into total marks
+# Day 1: [1, 5, 1] -> Day 2: [11, 15, 3] etc.
+df_cumulative = df.cumsum()
+
+# 3. Add a Day column for the X-axis
+df_cumulative['Day'] = range(1, len(df_cumulative) + 1)
 
 # --- 3. PLOTTING ---
-plt.style.use('dark_background') # Looks "authentic" on GitHub's dark mode
-plt.figure(figsize=(10, 5))
+plt.style.use('dark_background')
+plt.figure(figsize=(10, 6))
 
-for col in df.columns:
+# Plot each skill as a line
+for col in df_cumulative.columns:
     if col != 'Day':
-        valid_series = df[col].dropna()
-        days = df['Day'][:len(valid_series)]
-        plt.plot(days, valid_series, label=col, marker='o', linewidth=2.5, markersize=6)
+        plt.plot(df_cumulative['Day'], df_cumulative[col], 
+                 label=col, marker='o', linewidth=2.5, markersize=8)
 
-# Aesthetics for GitHub
-plt.title('HackerRank Progress Tracker', fontsize=16, fontweight='bold', color='#58a6ff')
-plt.xlabel('Days of Practice', fontsize=12)
-plt.ylabel('Score / Marks', fontsize=12)
-plt.xticks(df['Day'])
-plt.grid(axis='y', linestyle='--', alpha=0.3)
+# --- 4. AESTHETICS ---
+plt.title('HackerRank: Cumulative Skill Growth', fontsize=16, fontweight='bold', color='#58a6ff')
+plt.xlabel('Day Number', fontsize=12)
+plt.ylabel('Total Accumulated Marks', fontsize=12)
+plt.xticks(df_cumulative['Day']) # Shows 1, 2, 3... on X-axis
+plt.grid(axis='both', linestyle='--', alpha=0.2)
 
-# Move legend to the side
+# Legend placement
 plt.legend(loc='upper left', bbox_to_anchor=(1, 1), frameon=False)
 
-# Save the file (Crucial for README)
+# Save for README
 plt.tight_layout()
 plt.savefig('progress_graph.png', dpi=300, transparent=True)
