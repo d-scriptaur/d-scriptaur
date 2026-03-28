@@ -24,6 +24,22 @@ I am a dedicated student in Data Science, currently navigating research and deve
 
 ---
 
+### 🚀 My HackerRank Journey
+
+This graph is automatically updated via GitHub Actions as I progress through my skills.
+
+<p align="center">
+  <img src="./progress_graph.png" alt="HackerRank Progress Graph" width="800">
+</p>
+
+---
+
+### 🛠️ Current Tech Stack
+* **Languages:** Python, SQL
+* **Tools:** Linux, DBMS, Git
+
+---
+
 > "I and only I possess the power to change the script of my futute" ~ *D`scriptaur*
 
 ---
