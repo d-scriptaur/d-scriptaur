@@ -36,7 +36,7 @@ This graph is automatically updated via GitHub Actions as I progress through my 
 
 ### 🛠️ Current Tech Stack
 * **Languages:** Python, SQL
-* **Tools:** Linux, DBMS, Git
+* **Tools:** Linux, DBMS, Github
 
 ---
 
