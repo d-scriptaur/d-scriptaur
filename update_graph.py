@@ -3,11 +3,11 @@ import matplotlib.pyplot as plt
 
 # --- 1. DATA SECTION (Update this part daily) ---
 data = {
-    'Problem Solving': [1,10,10], 
-    'Python':          [5,10,10],
-    'Linux Shell':     [1,2,1],
-    'SQL':             [10,10,10],  
-    'Databases':       [5,5,5]        
+    'Problem Solving': [1,10,10,10], 
+    'Python':          [5,10,10,10],
+    'Linux Shell':     [1,2,1,2],
+    'SQL':             [10,10,10,10],  
+    'Databases':       [5,5,5,5]        
 }
 
 # --- 2. PROCESSING ---
